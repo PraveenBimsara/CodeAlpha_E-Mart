@@ -1,4 +1,5 @@
 import 'package:e_mart/consts/consts.dart';
+import 'package:e_mart/views/splash_screen/splsh_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         fontFamily: regular,
       ),
+      home: const SplashScreen(),
     );
   }
 }
