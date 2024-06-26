@@ -1,6 +1,7 @@
 import 'package:e_mart/consts/consts.dart';
 import 'package:e_mart/consts/lists.dart';
 import 'package:e_mart/views/auth_screen/signup_screen.dart';
+import 'package:e_mart/views/home_acreen/home.dart';
 import 'package:e_mart/views/home_acreen/home_screen.dart';
 import 'package:e_mart/widgets_common/applogo_widget.dart';
 import 'package:e_mart/widgets_common/bg_widget.dart';
@@ -46,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                       title: login,
                       textColor: whiteColor,
                       onPress: () {
-                        Get.to(() => const HomeScreen());
+                        Get.to(() => const Home());
                       }).box.width(context.screenWidth - 50).make(),
                   5.heightBox,
                   createNewAccount.text.color(fontGrey).make(),
