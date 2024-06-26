@@ -9,9 +9,15 @@ import 'package:get/get.dart';
 
 import '../../widgets_common/bg_widget.dart';
 
-class SignupScreen extends StatelessWidget {
+class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
+  @override
+  State<SignupScreen> createState() => _SignupScreenState();
+}
+
+class _SignupScreenState extends State<SignupScreen> {
+  bool? isCheck = false;
   @override
   Widget build(BuildContext context) {
     return bgWidget(
@@ -44,36 +50,41 @@ class SignupScreen extends StatelessWidget {
                   Row(
                     children: [
                       Checkbox(
-                          checkColor: redColor,
-                          value: false,
-                          onChanged: (newValue) {}),
+                          activeColor: redColor,
+                          checkColor: whiteColor,
+                          value: isCheck,
+                          onChanged: (newValue) {
+                            setState(() {
+                              isCheck = newValue;
+                            });
+                          }),
                       10.widthBox,
                       Expanded(
                         child: RichText(
                             text: const TextSpan(children: [
                           TextSpan(
                               text: 'I agree to the ',
-                              style:
-                                  TextStyle(fontFamily: bold, color: fontGrey)),
+                              style: TextStyle(
+                                  fontFamily: regular, color: fontGrey)),
                           TextSpan(
                               text: tremAndCond,
-                              style:
-                                  TextStyle(fontFamily: bold, color: redColor)),
+                              style: TextStyle(
+                                  fontFamily: regular, color: redColor)),
                           TextSpan(
                               text: ' & ',
-                              style:
-                                  TextStyle(fontFamily: bold, color: fontGrey)),
+                              style: TextStyle(
+                                  fontFamily: regular, color: fontGrey)),
                           TextSpan(
                               text: tremAndCond,
-                              style:
-                                  TextStyle(fontFamily: bold, color: redColor))
+                              style: TextStyle(
+                                  fontFamily: regular, color: redColor))
                         ])),
                       ),
                     ],
                   ),
                   5.heightBox,
                   myButton(
-                          color: redColor,
+                          color: isCheck == true ? redColor : lightGrey,
                           title: signup,
                           textColor: whiteColor,
                           onPress: () {})
