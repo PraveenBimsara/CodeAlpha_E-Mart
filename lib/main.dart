@@ -1,5 +1,6 @@
 import 'package:e_mart/consts/consts.dart';
 import 'package:e_mart/views/splash_screen/splsh_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
